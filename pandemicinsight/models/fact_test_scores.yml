@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: fact_test_scores
+    description: |
+      Fact table containing standardized test score breakdowns by year, region, grade, and subject,
+      derived from raw test score data and joined to dimensions.
+    columns:
+      - name: datekey
+        description: Surrogate key representing the year of the test
+        tests:
+          - not_null
+
+      - name: regionkey
+        description: Surrogate key representing the U.S. state or region
+        tests:
+          - not_null
+
+      - name: gradesubject_key
+        description: Surrogate key representing the combination of grade and subject
+        tests:
+          - not_null
+
+      - name: testscore_belowbasic
+        description: Number of students performing below basic level
+
+      - name: testscore_atbasic
+        description: Number of students performing at basic level
+
+      - name: testscore_atproficient
+        description: Number of students performing at proficient level
+
+      - name: testscore_atadvanced
+        description: Number of students performing at advanced level
+
+      - name: averagescore
+        description: Average score for the test
+
+    tests:
+      - unique:
+          combination_of:
+            - datekey
+            - regionkey
+            - gradesubject_key

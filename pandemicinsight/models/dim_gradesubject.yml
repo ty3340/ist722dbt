@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_gradesubject
+    description: Dimension table for unique grade-subject combinations from test score data.
+    columns:
+      - name: gradesubject_key
+        description: Surrogate key for each unique grade-subject combination
+        tests:
+          - not_null
+          - unique
+
+      - name: grade
+        description: The grade level (e.g., 4th, 8th)
+        tests:
+          - not_null
+
+      - name: subject
+        description: The academic subject (e.g., Math, Reading)
+        tests:
+          - not_null
+
+    tests:
+      - unique:
+          combination_of:
+            - grade
+            - subject
