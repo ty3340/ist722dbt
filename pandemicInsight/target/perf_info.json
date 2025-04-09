@@ -1,0 +1,57 @@
+{
+    "path_count": 198,
+    "parsed_path_count": 198,
+    "static_analysis_path_count": 2,
+    "static_analysis_parsed_path_count": 2,
+    "is_partial_parse_enabled": true,
+    "is_static_analysis_enabled": true,
+    "read_files_elapsed": 0.017711725959088653,
+    "load_macros_elapsed": 0.6403265800327063,
+    "parse_project_elapsed": 0.3090946089942008,
+    "patch_sources_elapsed": 8.369970601052046e-06,
+    "process_manifest_elapsed": 0.029601517016999424,
+    "load_all_elapsed": 1.0708578120102175,
+    "projects": [
+        {
+            "project_name": "pandemicInsight",
+            "elapsed": 0.30471655301516876,
+            "parsers": [
+                {
+                    "parser": "model",
+                    "elapsed": 0.1583356269984506,
+                    "parsed_path_count": 2
+                },
+                {
+                    "parser": "test",
+                    "elapsed": 0.14483153400942683,
+                    "parsed_path_count": 1
+                }
+            ],
+            "parsed_path_count": 3
+        },
+        {
+            "project_name": "dbt_snowflake",
+            "elapsed": 0.0014105470036156476,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt",
+            "elapsed": 0.0015470630605705082,
+            "parsers": [
+                {
+                    "parser": "doc",
+                    "elapsed": 0.0003332060296088457,
+                    "parsed_path_count": 1
+                }
+            ],
+            "parsed_path_count": 1
+        },
+        {
+            "project_name": "dbt_utils",
+            "elapsed": 0.0013068729895167053,
+            "parsers": [],
+            "parsed_path_count": 0
+        }
+    ]
+}
