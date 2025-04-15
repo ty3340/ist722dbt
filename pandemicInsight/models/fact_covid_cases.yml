@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: fact_covid_cases
+    description: |
+      Fact table containing COVID-19 related metrics per state and year, 
+      derived from raw pandemic data sources.
+    columns:
+      - name: datekey
+        description: Year in which the data was recorded
+        tests:
+          - not_null
+
+      - name: regionkey
+        description: U.S. state and places where data was recorded
+        tests:
+          - not_null
+
+      - name: total_confirmed
+        description: Total confirmed COVID-19 cases
+
+      - name: total_deceased
+        description: Total number of deaths due to COVID-19
+
+      - name: total_hospitalized_patients
+        description: Total number of hospitalized COVID-19 patients
+
+      - name: total_intensive_care_patients
+        description: Total number of ICU COVID-19 patients
+
+      - name: total_fully_vaccinated
+        description: Number of people fully vaccinated
+
+      - name: total_vaccinated
+        description: Number of people with at least one dose
+
+      - name: total_doses_administered
+        description: Total number of vaccine doses administered
+
+#    tests:
+#      - unique:
+#          combination_of:
+#            - datekey
+#            - regionkey
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of:
+            - datekey
+            - regionkey
