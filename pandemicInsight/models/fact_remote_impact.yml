@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: fact_remote_impact
+    description: >
+      Fact table capturing student responses on remote learning resources 
+      (e.g., internet access, device availability), including percentages of each response.
+    columns:
+      
+      - name: datekey
+        description: Surrogate key representing the year of the test
+        tests:
+          - not_null
+
+      - name: regionkey
+        description: Surrogate key representing the U.S. state or region
+        tests:
+          - not_null
+
+      - name: gradesubject_key
+        description: Surrogate key representing the combination of grade and subject
+        tests:
+          - not_null
+
+      - name: question
+        description: question about the type of remote learning 
+ 
+      - name: answeroption
+        description: frequency of students access to a particular type of remote learning
+
+      - name: percentage
+        description: Percentage of students by state corresponding to the frequency of accessing a type of remote learning
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - datekey
+            - regionkey
+            - gradesubject_key       

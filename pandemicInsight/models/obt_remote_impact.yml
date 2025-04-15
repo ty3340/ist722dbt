@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: obt_remote_impact
+    description: The remote learning access fact table combined with all relevant dimensions 
+      into a denormalized table. One row per year, region, grade, subject, question, and answer.

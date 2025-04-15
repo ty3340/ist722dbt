@@ -45,7 +45,7 @@ models:
 
     tests:
       - dbt_utils.unique_combination_of_columns:
-          combination_of:
+          combination_of_columns:
             - datekey
             - regionkey
             - gradesubject_key
