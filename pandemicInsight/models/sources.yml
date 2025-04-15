@@ -30,3 +30,19 @@ sources:
           - name: state
             tests:
               - not_null
+
+      - name: remotelearningbystate
+        description: "The type of remote learning by state"
+        columns:
+          - name: subject
+            tests:
+              - not_null
+          - name: grade
+            tests:
+              - not_null
+          - name: year
+            tests:
+              - not_null
+          - name: state
+            tests:
+              - not_null
